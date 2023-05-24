@@ -116,3 +116,24 @@ p {
 .not-found-data img{
     border-radius: 50%;
 }
+
+
+/* Shimmer cards */
+.shimmer-cards-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+.shimmer-card{
+    border-radius: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    padding: 20px;
+    background-color: rgb(110, 133, 125);
+    height: 400px;
+}

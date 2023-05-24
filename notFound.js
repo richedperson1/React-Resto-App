@@ -8,3 +8,17 @@ export function NotFound() {
     </>
   );
 }
+
+export function Shimmer() {
+  return (
+    <>
+      <div className="shimmer-cards-list">
+        {Array(15)
+          .fill("")
+          .map((val) => {
+            return <div className="shimmer-card"></div>;
+          })}
+      </div>
+    </>
+  );
+}

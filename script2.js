@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { restaurantList as restoEle } from "./content";
 import { NotFound } from "./notFound";
-
+import { Shimmer } from "./notFound";
 /* My Food App structure will look like this, 
             1) Header
                 - Logo
@@ -110,7 +110,7 @@ const swiggyAPICall = async () => {
 function BodyTags() {
   const [searchTxt, etseachTxt] = useState();
 
-  const [restaurantList, setResto] = useState(restoEle);
+  const [restaurantList, setResto] = useState([]);
 
   const [restoFinal, setRestoFinal] = useState(restaurantList);
 
@@ -126,7 +126,10 @@ function BodyTags() {
 
   const restoLengthBool = restaurantList.length > 0 ? true : false;
 
-  return (
+  console.log(Shimmer);
+  return restoFinal?.length == 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="search-container">
         <input
