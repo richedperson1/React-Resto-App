@@ -12,7 +12,10 @@ export function NotFound() {
 export function Shimmer() {
   return (
     <>
-      <div className="shimmer-cards-list">
+      <div>
+        <h1 className="dish-heading">Dish Menu</h1>
+      </div>
+      <div className="shimmer-cards-list container">
         {Array(15)
           .fill("")
           .map((val) => {

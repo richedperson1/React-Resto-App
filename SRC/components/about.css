@@ -1,0 +1,88 @@
+
+:root{
+    --border-radius:20px
+}
+
+.aboutUs{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  
+  .container{
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+  }
+
+  
+  h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    line-height: 1.8;
+    font-size: 18px;
+  }
+  
+  .highlight {
+    color: #f00;
+    font-weight: bold;
+  }
+  
+  .quote {
+    font-style: italic;
+    font-size: 24px;
+    color: #777;
+    margin-top: 30px;
+  }
+  
+  .header-items{
+    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+  }
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .team-member {
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .team-member h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+
+
+
+.aboutUs{
+    margin: 0;
+    background: #d3aaaa;
+}

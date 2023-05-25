@@ -1,3 +1,9 @@
+
+
+:root{
+    --width-dish-box:390px
+}
+
 .header-items {
     display: flex;
     justify-content: space-between;
@@ -5,6 +11,10 @@
     border: 2px solid;
 }
 
+.container{
+    max-width: 1350;
+    margin-inline: auto;
+}
 .header-items>img {
     height: 100px;
     border: 3px solid;
@@ -50,7 +60,7 @@ img {
 
 .dish-card {
     border-radius: 10px;
-    width: 400px;
+    width: var( --width-dish-box);
     display: flex;
     flex-direction: column;
     border: 2px solid gray;
@@ -78,8 +88,8 @@ p {
     margin-inline: auto;
 }
 
-.footer-section p {
-    font-size: 2rem;
+p.footer-owner {
+    font-size: 100%;
     font-weight: 900;
 }
 
@@ -103,6 +113,11 @@ p {
     cursor: pointer;
 }
 
+.dish-heading {
+    text-align: center;
+    font-size: 2.3rem;
+}
+
 
 /* not founds data */
 
@@ -119,6 +134,7 @@ p {
 
 
 /* Shimmer cards */
+
 .shimmer-cards-list{
     display: flex;
     flex-wrap: wrap;
@@ -129,7 +145,7 @@ p {
 }
 .shimmer-card{
     border-radius: 10px;
-    width: 400px;
+    width: var( --width-dish-box);
     display: flex;
     flex-direction: column;
     border: 2px solid gray;
@@ -137,3 +153,9 @@ p {
     background-color: rgb(110, 133, 125);
     height: 400px;
 }
+
+
+.container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
