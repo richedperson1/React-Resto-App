@@ -11,6 +11,8 @@ import { AboutPageMain } from "./components/about";
 import { HeaderCreate } from "./components/header";
 
 // AppLayout component to show: Header, Body, Footer
+
+
 const AppLayout = () => {
   return (
     <React.Fragment>
@@ -35,3 +37,11 @@ const allRoute = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root-card"));
 
 root.render(<RouterProvider router={allRoute} />);
+
+/*
+Features to add in futures
+
+1. add to carts
+2. When click on dish it add to cart button visible to it
+
+*/
