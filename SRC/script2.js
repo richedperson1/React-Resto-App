@@ -9,9 +9,8 @@ import { FooterElement, CreateSingleCard } from "./components/layOut";
 import { BodyTags } from "./components/bodyElements";
 import { AboutPageMain } from "./components/about";
 import { HeaderCreate } from "./components/header";
-
+import ErrorComponent from "./components/error";
 // AppLayout component to show: Header, Body, Footer
-
 
 const AppLayout = () => {
   return (
@@ -27,6 +26,7 @@ const allRoute = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <ErrorComponent />,
   },
   {
     path: "/about",

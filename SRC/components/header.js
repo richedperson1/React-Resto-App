@@ -1,16 +1,17 @@
+import { Link } from "react-router-dom";
 export const HeaderCreate = () => {
   return (
     <div className="header-items container">
       <nav>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/about">Contact us</a>
+            <Link to="/about">Contact us</Link>
           </li>
         </ul>
       </nav>
