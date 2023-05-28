@@ -1,0 +1,21 @@
+.shimmerResto{
+    height: 600px;
+    width: 500px;
+    background-color: rgb(110, 133, 125);
+
+}
+
+.shapeDetails{
+    margin-inline: auto;
+    margin-top: 50px;
+}
+
+.restaurants-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurants-details img{
+    border-radius: 30px;
+}

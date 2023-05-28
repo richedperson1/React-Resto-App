@@ -44,6 +44,11 @@ body {
     background-color: rgb(195, 143, 75);
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 img {
     cursor: pointer;
 }
@@ -66,6 +71,8 @@ img {
     border: 2px solid gray;
     padding: 20px;
     background-color: rgb(50, 147, 114);
+    text-decoration: none;
+    color: black;
 }
 
 .dish-card img {

@@ -10,6 +10,7 @@ import { BodyTags } from "./components/bodyElements";
 import { AboutPageMain } from "./components/about";
 import { HeaderCreate } from "./components/header";
 import ErrorComponent from "./components/error";
+import { RestoMenu } from "./components/restoDetails";
 // AppLayout component to show: Header, Body, Footer
 
 const AppLayout = () => {
@@ -39,6 +40,10 @@ const allRoute = createBrowserRouter([
       {
         path: "/contact",
         element: <AboutPageMain />,
+      },
+      {
+        path: "/resto/:id",
+        element: <RestoMenu />,
       },
     ],
   },

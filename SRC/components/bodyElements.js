@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Shimmer } from "../notFound";
 import { CreateSingleCard } from "./layOut";
 import { NotFound } from "../notFound";
@@ -13,10 +14,15 @@ let urlData =
 
 const swiggyAPICall = async () => {
   const swiggyURL =
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9728896&lng=73.8229516&page_type=DESKTOP_WEB_LISTING";
   const swiggyData = await fetch(swiggyURL);
   const swiggyJson = await swiggyData.json();
+  // console.log(swiggyJson);
   return swiggyJson;
+};
+
+const restoDetailsEvent = (restDetail) => {
+  // console.log(restDetail);
 };
 
 /**
@@ -57,12 +63,14 @@ export function BodyTags() {
 
   const restoLengthBool = restaurantList.length > 0 ? true : false;
 
-  console.log(Shimmer);
+  /* `console.log(restoFinal);` is logging the value of the `restoFinal` state variable to the console.
+  It is used for debugging purposes to check the current value of `restoFinal` at a particular point
+  in time. */
   return restoFinal?.length == 0 ? (
     <Shimmer />
   ) : (
     <>
-      <div className="search-container container">
+      <div className="search-container container" key={"search-container-main"}>
         <input
           type="text"
           value={searchTxt}
@@ -81,8 +89,6 @@ export function BodyTags() {
           className="searchBar pointer"
           onClick={(e) => {
             const foundEle = selectedElement(searchTxt, restaurantList);
-            console.log("Modified list", restaurantList);
-            console.log("Second resto list", restoFinal);
             if (typeof foundEle == "object") {
               setResto(foundEle);
             }
@@ -100,16 +106,26 @@ export function BodyTags() {
           ❌
         </button>
       </div>
-      <div>
+      <div key={"search-container-heading"}>
         <h1 className="dish-heading">Dish Menu</h1>
       </div>
-      <div className="dish-containers container">
+      <div
+        className="dish-containers container"
+        key={"search-container-restocard"}
+      >
         {restoLengthBool ? (
           restaurantList.map((val) => {
             return (
-              <div className="dish-card" key={val.data.id + "main-div"}>
-                <CreateSingleCard {...val.data} />
-              </div>
+              <Link
+                to={`/resto/${val?.data?.id}`}
+                className="dish-card"
+                key={val?.data?.id + "main-div"}
+                onClick={() => {
+                  restoDetailsEvent(val);
+                }}
+              >
+                <CreateSingleCard {...val?.data} />
+              </Link>
             );
           })
         ) : (
