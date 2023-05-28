@@ -32,17 +32,33 @@ export const RestoMenu = () => {
   }, []);
 
   const imageURL = UrlData + RestaurentDetails[0]?.cloudinaryImageId;
-  console.log(RestaurentDetails[0]?.cloudinaryImageId);
+  console.log(RestaurentDetails);
   return RestaurentDetails.length > 0 ? (
     <>
       <section className="container">
         <div className="restaurants-details shapeDetails">
           <img src={imageURL} />
-          <div>
+          <div key={`rating_${RestaurentDetails[0].avgRating}`}>
             <p>Rating : {RestaurentDetails[0].avgRating} 🌟⭐</p>
           </div>
-          <div>
+          <div key={`rating_${RestaurentDetails[0].slugs?.city}`}>
             <p>City : {RestaurentDetails[0].slugs?.city.toUpperCase()}</p>
+          </div>
+          <div key={`rating_${RestaurentDetails[0].costForTwoMessage}`}>
+            <p>Price : {RestaurentDetails[0].costForTwoMessage}</p>
+          </div>
+          <div key={`rating_${RestaurentDetails[0].cuisines.join("_")}`}>
+            <p>Cuisines : {RestaurentDetails[0].cuisines.join(", ")}</p>
+          </div>
+
+          <div key={`rating_${RestaurentDetails[0].totalRatingsString}`}>
+            <p>Review's : {RestaurentDetails[0].totalRatingsString}</p>
+          </div>
+          <div key={`rating_${RestaurentDetails[0].veg}`}>
+            <p>
+              Veg/Non-veg :{" "}
+              {RestaurentDetails[0].veg == true ? "Veg" : "Non-veg"}
+            </p>
           </div>
         </div>
       </section>
