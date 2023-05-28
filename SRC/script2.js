@@ -4,8 +4,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { FooterElement, CreateSingleCard } from "./components/layOut";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { FooterElement } from "./components/layOut";
 import { BodyTags } from "./components/bodyElements";
 import { AboutPageMain } from "./components/about";
 import { HeaderCreate } from "./components/header";
@@ -16,7 +16,7 @@ const AppLayout = () => {
   return (
     <React.Fragment>
       <HeaderCreate />
-      <BodyTags />
+      <Outlet />
       <FooterElement />
     </React.Fragment>
   );
@@ -27,10 +27,20 @@ const allRoute = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     errorElement: <ErrorComponent />,
-  },
-  {
-    path: "/about",
-    element: <AboutPageMain />,
+    children: [
+      {
+        path: "/",
+        element: <BodyTags />,
+      },
+      {
+        path: "/about",
+        element: <AboutPageMain />,
+      },
+      {
+        path: "/contact",
+        element: <AboutPageMain />,
+      },
+    ],
   },
 ]);
 

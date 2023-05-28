@@ -6,7 +6,7 @@ export const AboutPageMain = () => {
   return (
     <>
       <div className="aboutUs">
-        <HeaderCreate />
+        {/* <HeaderCreate /> */}
         <header className="container">
           <h1>About Our Restaurant</h1>
         </header>
@@ -56,7 +56,7 @@ export const AboutPageMain = () => {
             </div>
 
             <div class="team-member">
-              \ <h3>Michael Brown</h3>
+              <h3>Michael Brown</h3>
               <p>Pastry Chef</p>
             </div>
           </div>
