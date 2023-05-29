@@ -38,27 +38,31 @@ export const RestoMenu = () => {
       <section className="container">
         <div className="restaurants-details shapeDetails">
           <img src={imageURL} />
-          <div key={`rating_${RestaurentDetails[0].avgRating}`}>
+          <div key={`restarent_${RestaurentDetails[0].avgRating}`}>
             <p>Rating : {RestaurentDetails[0].avgRating} 🌟⭐</p>
           </div>
-          <div key={`rating_${RestaurentDetails[0].slugs?.city}`}>
+          <div key={`restarent_${RestaurentDetails[0].slugs?.city}`}>
             <p>City : {RestaurentDetails[0].slugs?.city.toUpperCase()}</p>
           </div>
-          <div key={`rating_${RestaurentDetails[0].costForTwoMessage}`}>
+          <div key={`restarent_${RestaurentDetails[0].costForTwoMessage}`}>
             <p>Price : {RestaurentDetails[0].costForTwoMessage}</p>
           </div>
-          <div key={`rating_${RestaurentDetails[0].cuisines.join("_")}`}>
+          <div key={`restarent_${RestaurentDetails[0].cuisines.join("_")}`}>
             <p>Cuisines : {RestaurentDetails[0].cuisines.join(", ")}</p>
           </div>
 
-          <div key={`rating_${RestaurentDetails[0].totalRatingsString}`}>
+          <div key={`restarent_${RestaurentDetails[0].totalRatingsString}`}>
             <p>Review's : {RestaurentDetails[0].totalRatingsString}</p>
           </div>
-          <div key={`rating_${RestaurentDetails[0].veg}`}>
+          <div key={`restarent_${RestaurentDetails[0].veg}`}>
             <p>
               Veg/Non-veg :{" "}
               {RestaurentDetails[0].veg == true ? "Veg" : "Non-veg"}
             </p>
+          </div>
+
+          <div key={`addressOfResto`}>
+            <p>Address :{RestaurentDetails[0].labels[1].message}</p>
           </div>
         </div>
       </section>
