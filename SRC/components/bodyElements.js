@@ -21,9 +21,9 @@ const swiggyAPICall = async () => {
   return swiggyJson;
 };
 
-const restoDetailsEvent = (restDetail) => {
-  // console.log(restDetail);
-};
+// const restoDetailsEvent = (restDetail) => {
+//   console.log(restDetail);
+// };
 
 /**
  * The function filters an array of restaurant details based on a search text input.
@@ -120,9 +120,9 @@ export function BodyTags() {
                 to={`/resto/${val?.data?.id}`}
                 className="dish-card"
                 key={val?.data?.id + "main-div"}
-                onClick={() => {
-                  restoDetailsEvent(val);
-                }}
+                // onClick={() => {
+                //   restoDetailsEvent(val);
+                // }}
               >
                 <CreateSingleCard {...val?.data} />
               </Link>
