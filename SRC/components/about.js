@@ -1,8 +1,18 @@
 import { HeaderCreate } from "./header";
 
+import { Link } from "react-router-dom";
 import "./about.css";
+import { Outlet } from "react-router-dom";
 
 export const AboutPageMain = () => {
+  return (
+    <>
+      <Outlet />
+    </>
+  );
+};
+
+export const AboutPageOutlet = () => {
   return (
     <>
       <div className="aboutUs" key="aboutPage">
@@ -46,7 +56,9 @@ export const AboutPageMain = () => {
 
           <div className="team-container">
             <div className="team-member">
-              <h3>John Smith</h3>
+              <h3>
+                <Link to="personName">John Smith</Link>
+              </h3>
               <p>Head Chef</p>
             </div>
 

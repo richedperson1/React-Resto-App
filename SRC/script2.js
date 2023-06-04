@@ -3,14 +3,14 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { FooterElement } from "./components/layOut";
 import { BodyTags } from "./components/bodyElements";
-import { AboutPageMain } from "./components/about";
+import { AboutPageMain, AboutPageOutlet } from "./components/about";
 import { HeaderCreate } from "./components/header";
 import ErrorComponent from "./components/error";
 import { RestoMenu } from "./components/restoDetails";
+import { PersonNameDetails } from "./components/personalDetails";
 // AppLayout component to show: Header, Body, Footer
 
 const AppLayout = () => {
@@ -27,7 +27,7 @@ const allRoute = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <ErrorComponent />,
+    // errorElement: <ErrorComponent />,
     children: [
       {
         path: "/",
@@ -36,6 +36,16 @@ const allRoute = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPageMain />,
+        children: [
+          {
+            path: "",
+            element: <AboutPageOutlet />,
+          },
+          {
+            path: "personName",
+            element: <PersonNameDetails />,
+          },
+        ],
       },
       {
         path: "/contact",
