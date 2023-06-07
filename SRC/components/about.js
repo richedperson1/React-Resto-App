@@ -1,5 +1,3 @@
-import { HeaderCreate } from "./header";
-
 import { Link } from "react-router-dom";
 import "./about.css";
 import { Outlet } from "react-router-dom";
@@ -54,20 +52,22 @@ export const AboutPageOutlet = () => {
             dedication to creating extraordinary dining experiences."
           </p>
 
-          <div className="team-container">
-            <div className="team-member">
+          <div className="team-container" key={"main-div-id-1"}>
+            <div className="team-member" key={"div-id-1"}>
               <h3>
-                <Link to="personName">John Smith</Link>
+                <Link to="personName/Rutvik">John Smith</Link>
               </h3>
               <p>Head Chef</p>
             </div>
 
-            <div className="team-member">
-              <h3>Alice Johnson</h3>
+            <div className="team-member" key={"div-id-2"}>
+              <h3>
+                <Link to="personName">Alice Johnson</Link>
+              </h3>
               <p>Sous Chef</p>
             </div>
 
-            <div className="team-member">
+            <div className="team-member" key={"div-id-3"}>
               <h3>Michael Brown</h3>
               <p>Pastry Chef</p>
             </div>

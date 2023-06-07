@@ -10,7 +10,10 @@ import { AboutPageMain, AboutPageOutlet } from "./components/about";
 import { HeaderCreate } from "./components/header";
 import ErrorComponent from "./components/error";
 import { RestoMenu } from "./components/restoDetails";
-import { PersonNameDetails } from "./components/personalDetails";
+import {
+  PersonNameDetails,
+  PersonNameDetailDyanamic,
+} from "./components/personalDetails";
 // AppLayout component to show: Header, Body, Footer
 
 const AppLayout = () => {
@@ -45,11 +48,15 @@ const allRoute = createBrowserRouter([
             path: "personName",
             element: <PersonNameDetails />,
           },
+          {
+            path: "personName/:PersonName",
+            element: <PersonNameDetailDyanamic />,
+          },
         ],
       },
       {
         path: "/contact",
-        element: <AboutPageMain />,
+        element: <AboutPageOutlet />,
       },
       {
         path: "/resto/:id",
