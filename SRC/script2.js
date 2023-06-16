@@ -14,6 +14,8 @@ import {
   PersonNameDetails,
   PersonNameDetailDyanamic,
 } from "./components/personalDetails";
+
+import ProfileClass from "./components/personClass";
 // AppLayout component to show: Header, Body, Footer
 
 const AppLayout = () => {
@@ -47,6 +49,10 @@ const allRoute = createBrowserRouter([
           {
             path: "personName",
             element: <PersonNameDetails />,
+          },
+          {
+            path: "personClass",
+            element: <ProfileClass />,
           },
           {
             path: "personName/:PersonName",
